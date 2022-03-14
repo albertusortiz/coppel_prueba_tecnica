@@ -3,3 +3,4 @@ python-dotenv==0.19.2
 requests==2.27.1
 Flask-PyMongo==2.3.0
 pymongo[srv]
+Flask-JWT-Extended==4.3.1

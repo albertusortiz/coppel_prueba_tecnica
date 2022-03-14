@@ -1,5 +1,5 @@
 import os
-import json
+import datetime
 
 from dotenv import load_dotenv
 from pprint import pprint
@@ -9,14 +9,20 @@ from flask_pymongo import PyMongo, MongoClient
 from werkzeug.security import generate_password_hash, check_password_hash
 from bson import json_util
 from bson.objectid import ObjectId
+from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
+
 
 load_dotenv()
 
 NAME_DATABASE = os.getenv("NAME_DATABASE")
 USER_DATABASE = os.getenv("USER_DATABASE")
 PASSWORD_DATABASE = os.getenv("PASSWORD_DATABASE")
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 app = Flask(__name__)
+jwt = JWTManager(app)
+app.config['JWT_SECRET_KEY'] = SECRET_KEY
+app.config['JWT_ACCESS_TOKEN_EXPIRES'] = datetime.timedelta(days=1)
 app.config["MONGO_URI"] = f"mongodb+srv://{USER_DATABASE}:{PASSWORD_DATABASE}@cluster0.ajhif.mongodb.net/{NAME_DATABASE}?retryWrites=true&w=majority"
 mongo = PyMongo(app)
 
@@ -37,13 +43,15 @@ def create_user():
 
     if username and email and password:
         hashed_password = generate_password_hash(password)
+        access_token = create_access_token(identity=name)
         id = mongo.db.users.insert_one(
             {
                 'name': name,
                 'age': age,
                 'username': username,
                 'email': email,
-                'password': hashed_password
+                'password': hashed_password,
+                'token': access_token
             }
         )
         response = {
@@ -52,7 +60,8 @@ def create_user():
             'age': age,
             'username': username,
             'password': hashed_password,
-            'email': email
+            'email': email,
+            'token': access_token
         }
         return response
     else:
