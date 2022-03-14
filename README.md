@@ -40,14 +40,14 @@ Ahora bien, los servicios los podemos testear desde la coleccion que puedes enco
 
 - Para el servicio de busqueda, contamos con los siguientes endpoints desde el puerto 3030:
 
-http://localhost:3030/searchComics/<search>
+[http://localhost:3030/searchComics/<search\>]
 
-http://localhost:3030/searchComics/character/<search>
+[http://localhost:3030/searchComics/character/<search\>]
 
-http://localhost:3030/searchComics/comic/<search>
+[http://localhost:3030/searchComics/comic/<search\>]
 
 - Para el servicio de usuarios, contamos con los siguientes endpoints desde el puerto 6060:
 
-http://localhost:6060/users
+[http://localhost:6060/users]
 
-http://localhost:6060/login
+[http://localhost:6060/login]
