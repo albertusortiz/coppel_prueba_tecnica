@@ -86,7 +86,14 @@ def searching_character(search):
   if len(search)>0:
     search_character(search)
   else:
-    return jsonify({"message":"No results"})
+    return jsonify({"message":"No character found"})
+
+@app.route('/searchComics/comic/<search>r', methods=["GET"])
+def searching_comic(search):
+  if len(search)>0:
+    search_comics(search)
+  else:
+    return jsonify({"message":"No comic found"})
 
 if __name__ == '__main__':
   app.run(host="0.0.0.0", port=4000, debug=True)
