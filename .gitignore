@@ -1,3 +1,7 @@
 venv/
 microservice_1/service_search/.env
 microservice_2/service_users/.env
+microservice_1/service_search/__pycache__
+microservice_1/service_search/.pytest_cache
+microservice_2/service_users/__pycache__
+microservice_2/service_users/.pytest_cache
