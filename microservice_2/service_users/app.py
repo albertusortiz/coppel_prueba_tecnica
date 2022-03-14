@@ -29,23 +29,30 @@ def hello():
 @app.route('/users', methods=['POST'])
 def create_user():
     # Receiving data
+    name = request.json["name"]
+    age = request.json["age"]
     username = request.json["username"]
     password = request.json["password"]
     email = request.json["email"]
-    age = request.json["age"]
 
     if username and email and password:
         hashed_password = generate_password_hash(password)
         id = mongo.db.users.insert_one(
-            {'username': username, 'email': email,
-                'password': hashed_password, 'age': age}
+            {
+                'name': name,
+                'age': age,
+                'username': username,
+                'email': email,
+                'password': hashed_password
+            }
         )
         response = {
             'id': str(id),
+            'name': name,
+            'age': age,
             'username': username,
             'password': hashed_password,
-            'email': email,
-            'age': age
+            'email': email
         }
         return response
     else:
