@@ -45,29 +45,41 @@ def search_comics(search):
   if response_comics.status_code==200:
     response_json = json.loads(response_comics.text)
 
-    for character in response_json["data"]["results"]:
+    for comic in response_json["data"]["results"]:
       
-      if character["title"] == search:
-        id = character["id"]
-        title = character["title"]
-        image = character["thumbnail"]["path"]+"."+character["thumbnail"]["extension"]
-        #onsaleDate = character["dates"][0]["date"]
+      if comic["title"] == str(search):
+        id = comic["id"]
+        title = comic["title"]
+        image = comic["thumbnail"]["path"]+"."+comic["thumbnail"]["extension"]
+        onsaleDate = comic["dates"][0]["date"]
 
         response = {
           "id":id,
           "title":title,
-          "image":image
+          "image":image,
+          "onsaleDate":onsaleDate
         }
         return jsonify(response)
 
+def character_asc():
+  response_characters = requests.get(URL_CHARACTERS)
+
+  if response_characters.status_code==200:
+    response_json = json.loads(response_characters.text)
+
+    list_name = []
+    for character in response_json["data"]["results"]:
+      
+      list_name.append(character["name"])
+
+    response = {
+      "name":list_name
+    }
+    return jsonify(response)
+
 @app.route('/searchComics/<search>', methods=["GET"])
 def searching_character_or_comic(search):
-  if search_character(search):
-    return search_character(search)
-  if search_comics(search):
-    return search_comics(search)
-  response = {'message': 'No results for ' + search}
-  return jsonify(response)
+  return search_character(search) or search_comics(search) or character_asc()
 
 if __name__ == '__main__':
   app.run(host="0.0.0.0", port=4000, debug=True)
