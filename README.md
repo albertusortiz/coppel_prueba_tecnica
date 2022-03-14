@@ -22,7 +22,7 @@ Ahora bien, una vez tengamos este respositorio en nuestro equipo local, ya sea q
 
 En esta seccion vamos a levantar/ejecutar los micro-servicios que tenemos para este proyecto ejecutando los siguientes comandos:
 
-Abrimos la terminal y ejecutamos los siguientes comandos(asegurate de tener Docker instalado):
+Abrimos la terminal y nos movemos hasta llegar a la ruta **~/workspace/coppel_prueba-tecnica** y ejecutamos los siguientes comandos(asegurate de tener Docker instalado):
 
 ### Construimos los contenedores
 
