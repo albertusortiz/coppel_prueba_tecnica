@@ -81,5 +81,12 @@ def character_asc():
 def searching_character_or_comic(search):
   return search_character(search) or search_comics(search) or character_asc()
 
+@app.route('/searchComics/characte/<search>r', methods=["GET"])
+def searching_character(search):
+  if len(search)>0:
+    search_character(search)
+  else:
+    return jsonify({"message":"No results"})
+
 if __name__ == '__main__':
   app.run(host="0.0.0.0", port=4000, debug=True)
