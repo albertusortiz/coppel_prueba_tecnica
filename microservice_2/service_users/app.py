@@ -27,11 +27,6 @@ app.config["MONGO_URI"] = f"mongodb+srv://{USER_DATABASE}:{PASSWORD_DATABASE}@cl
 mongo = PyMongo(app)
 
 
-@app.route('/hello', methods=["GET"])
-def hello():
-    return jsonify({"message": "Hola mundo"})
-
-
 @app.route('/users', methods=['POST'])
 def create_user():
     # Receiving data
@@ -66,6 +61,13 @@ def create_user():
         return response
     else:
         return not_found()
+
+
+@app.route('/users', methods=['GET'])
+def get_users():
+    users = mongo.db.users.find()
+    response = json_util.dumps(users)
+    return Response(response, mimetype='application/json')
 
 
 @app.route("/login", methods=["POST"])
