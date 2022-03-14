@@ -22,6 +22,8 @@ docker-compose up
 
 # Probar en Postman
 
+** Los servicios los podemos testear desde la coleccion que puedes encontrar en la carpeta postman/ **
+
 - Para el servicio de busqueda, contamos con los siguientes endpoints desde el puerto 3030:
 
 http://localhost:3030/searchComics/<search>
