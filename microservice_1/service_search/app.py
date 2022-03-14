@@ -88,7 +88,7 @@ def searching_character_or_comic(search):
     return search_character(search) or search_comics(search) or character_asc()
 
 
-@app.route('/searchComics/characte/<search>r', methods=["GET"])
+@app.route('/searchComics/character/<search>', methods=["GET"])
 def searching_character(search):
     if len(search) > 0:
         search_character(search)
@@ -96,7 +96,7 @@ def searching_character(search):
         return jsonify({"message": "No character found"})
 
 
-@app.route('/searchComics/comic/<search>r', methods=["GET"])
+@app.route('/searchComics/comic/<search>', methods=["GET"])
 def searching_comic(search):
     if len(search) > 0:
         search_comics(search)
