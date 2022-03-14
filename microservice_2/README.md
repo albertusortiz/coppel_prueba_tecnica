@@ -7,7 +7,3 @@ docker build -t servicio_usuarios .
 ## Ejecutar la imagen
 
 docker run -it --publish 6060:2000 servicio_usuarios
-
-## Probar en Postman
-
-http://localhost:6060/users
