@@ -16,8 +16,7 @@ PRIVATE_KEY = os.getenv('PRIVATE_KEY')
 HASHED = os.getenv('HASHED')
 URL_CHARACTERS = f"https://gateway.marvel.com:443/v1/public/characters?ts={TS}&apikey={PUBLIC_KEY}&hash={HASHED}"
 
-@app.route('/searchComics/<search>', methods=["GET"])
-def get_character(search):
+def search_character(search):
   response_characters = requests.get(URL_CHARACTERS)
 
   if response_characters.status_code==200:
@@ -38,8 +37,13 @@ def get_character(search):
           "appearances":appearances
         }
         return jsonify(response)
-    response = jsonify({'message': 'No results for ' + search})
-    return response
+
+@app.route('/searchComics/<search>', methods=["GET"])
+def searching_character_or_comic(search):
+  if search_character(search):
+    return search_character(search)
+  response = {'message': 'No results for ' + search}
+  return jsonify(response)
 
 if __name__ == '__main__':
   app.run(host="0.0.0.0", port=4000, debug=True)
