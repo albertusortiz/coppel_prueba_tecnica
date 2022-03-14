@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  service_search:
+    build: microservice_1/.
+    ports:
+      - "3030:4000"
+    volumes:
+      - .:/code
+  service_users:
+    build: microservice_2/.
+    ports:
+      - "6060:2000"
+    volumes:
+      - .:/code
