@@ -1,2 +1,3 @@
 venv/
 microservice_1/service_search/.env
+microservice_2/service_users/.env
