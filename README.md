@@ -14,7 +14,7 @@ Primero debemos clonar este repositiorio en nuestro equipo local, se recomienda 
 
 - git clone https://github.com/albertusortiz/coppel_prueba_tecnica.git
 
-O en su defecto, descargar el archivo ZIP dando clic en el boton verde CODE y en la ultima opción damos clic. Descomprimimos este archivo en nuestra carpeta workspace y listo.
+O en su defecto, descargar el archivo ZIP dando clic en el boton verde CODE (esquina superior derecha, a un lado de la seccion de About) y en la ultima opción damos clic. Descomprimimos este archivo en nuestra carpeta workspace y listo.
 
 Ahora bien, una vez tengamos este respositorio en nuestro equipo local, ya sea que lo hayamos clonado o descargado como .zip. Podemos pasar a la siguiente seccion de Docker Compose.
 
