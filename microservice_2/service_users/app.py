@@ -68,6 +68,25 @@ def create_user():
         return not_found()
 
 
+@app.route("/login", methods=["POST"])
+def login():
+    username = request.json["username"]
+    password = request.json["password"]
+
+    user_from_db = mongo.db.users.find_one(
+        {
+            'username': username
+        }
+    )
+
+    if user_from_db:
+        if check_password_hash(user_from_db['password'], password):
+            response = json_util.dumps(user_from_db)
+            return Response(response, mimetype='application/json')
+
+    return jsonify({'msg': 'The username or password is incorrect'}), 401
+
+
 @app.errorhandler(404)
 def not_found(error=None):
     response = jsonify({
