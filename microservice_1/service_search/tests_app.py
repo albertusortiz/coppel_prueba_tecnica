@@ -24,8 +24,8 @@ response_searchComic_character = {
         "name": "Abyss"
     }
 
-# def test_get_character_for_abyss_check_content_type_equals_json():
-#     assert response_body_character.headers["Content-Type"] == "application/json"
+def test_get_character_for_abyss_check_content_type_equals_json():
+    assert response_character.headers["Content-Type"] == "application/json"
 
 def test_get_details_for_character_abyss():
     assert response_searchComic_character == response_body_character
@@ -62,8 +62,8 @@ response_searchComic_comic = {
         "title": "ULTIMATE X-MEN VOL. 5: ULTIMATE WAR TPB (Trade Paperback)"
     }
 
-# def test_get_comic_for_abyss_check_content_type_equals_json():
-#     assert response_body_comic.headers["Content-Type"] == "application/json"
+def test_get_comic_for_abyss_check_content_type_equals_json():
+    assert response_comic.headers["Content-Type"] == "application/json"
 
 def test_get_details_for_comic_xmen():
     assert response_searchComic_comic == response_body_comic
