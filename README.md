@@ -52,16 +52,16 @@ Ahora bien, los servicios los podemos testear desde la coleccion que puedes enco
 
 [http://localhost:6060/login]
 
-# Pruebas Unitarias y/o de Integración (Trabajando ...)
+# Pruebas Unitarias y/o de Integración
 
 En cada microservicio podremos encontrar un archivo **tests_app.py** en el cual definimos diferentes casos de pruebas para testear nuestros servicios y con el paso del tiempo, podamos mantener buenas practicas y calidad sobre el código de desarrllo.
 
 Para ejecutar las pruebas escribimos el siguiente comando:
 
-- Para el servicio **microservice_1** desde la raiz del proyecto ejecutamos (En progreso...):
+- Para el servicio **microservice_1** desde la raiz del proyecto ejecutamos:
 
 [pytest microservice_1/service_search/tests_app.py -xsvv]
 
-- Para el servicio **microservice_2** desde la raiz del proyecto ejecutamos (Aun no disponible):
+- Para el servicio **microservice_2** desde la raiz del proyecto ejecutamos:
 
 [pytest microservice_2/service_users/tests_app.py -xsvv]
