@@ -26,7 +26,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3030/searchComics/<search>",
+							"raw": "http://localhost:3030/searchComics/3-D Man",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -34,7 +34,7 @@
 							"port": "3030",
 							"path": [
 								"searchComics",
-								"<search>"
+								"3-D Man"
 							],
 							"query": [
 								{
@@ -65,7 +65,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3030/searchComics/character/<search>",
+							"raw": "http://localhost:3030/searchComics/character/Abyss",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -74,7 +74,7 @@
 							"path": [
 								"searchComics",
 								"character",
-								"<search>"
+								"Abyss"
 							],
 							"query": [
 								{
@@ -105,7 +105,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3030/searchComics/comic/<search>",
+							"raw": "http://localhost:3030/searchComics/comic/ULTIMATE X-MEN VOL. 5: ULTIMATE WAR TPB (Trade Paperback)",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -114,7 +114,7 @@
 							"path": [
 								"searchComics",
 								"comic",
-								"<search>"
+								"ULTIMATE X-MEN VOL. 5: ULTIMATE WAR TPB (Trade Paperback)"
 							],
 							"query": [
 								{
@@ -164,7 +164,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"Susana Tolentino\",\r\n    \"age\": \"29\",\r\n    \"username\": \"susytno\",\r\n    \"password\": \"passsusytno\",\r\n    \"email\": \"susanatno@gmail.com\"\r\n}"
+							"raw": "{\r\n    \"name\":\"Hugo Alberto\",\r\n    \"age\": \"3\",\r\n    \"username\": \"huguito\",\r\n    \"password\": \"passhugo\",\r\n    \"email\": \"hugo@gmail.com\"\r\n}"
 						},
 						"url": {
 							"raw": "http://localhost:6060/users",
@@ -193,7 +193,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"albertusortiz\",\r\n    \"password\": \"faztalbertusortiz\"\r\n}"
+							"raw": "{\r\n    \"username\": \"huguito\",\r\n    \"password\": \"passhugo\"\r\n}"
 						},
 						"url": {
 							"raw": "http://localhost:6060/login",
