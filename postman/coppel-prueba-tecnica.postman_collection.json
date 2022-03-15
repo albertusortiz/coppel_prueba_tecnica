@@ -26,7 +26,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3030/searchComics/3-D Man",
+							"raw": "http://localhost:3030/searchComics/ULTIMATE X-MEN VOL. 5: ULTIMATE WAR TPB (Trade Paperback)",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -34,7 +34,7 @@
 							"port": "3030",
 							"path": [
 								"searchComics",
-								"3-D Man"
+								"ULTIMATE X-MEN VOL. 5: ULTIMATE WAR TPB (Trade Paperback)"
 							],
 							"query": [
 								{
@@ -138,12 +138,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:2000/users",
+							"raw": "http://localhost:6060/users",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "2000",
+							"port": "6060",
 							"path": [
 								"users"
 							]
